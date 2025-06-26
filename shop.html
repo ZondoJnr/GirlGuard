@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GirlGuard Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111;
+      --primary: #ff3e6c;
+      --accent: #ff9aa2;
+      --text: #fff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    .logo h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 24px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #000;
+      padding: 1rem 2rem;
+    }
+
+    .mobile-nav a {
+      color: var(--accent);
+      padding: 0.5rem 0;
+      text-decoration: none;
+    }
+
+    .products {
+      display: grid;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .product {
+      background: #1a1a1a;
+      padding: 1.2rem;
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .product h3 {
+      font-family: 'Arial';
+      margin: 1rem 0 0.3rem;
+      color: var(--primary);
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .whatsapp {
+      background-color: var(--accent);
+      color: #000;
+      padding: 0.7rem 1.4rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-family: 'Anton', sans-serif;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.7rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav.active { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">
+    <img src="logo.jpg" alt="GirlGuard Logo">
+    <h1>GirlGuard</h1>
+  </div>
+
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="get-a-website.html">Get a Website</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="get-a-website.html">Get a Website</a>
+</div>
+
+<!-- Products -->
+<div class="products">
+  <div class="product">
+    <img src="images/combo.jpg" alt="Combo">
+    <h3>Combo (USA Police Edition)</h3>
+    <span class="price">R350</span>
+    <p>Powerful stun gun + large 110ml pepper spray. Get the full force package trusted by pros.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the USA Combo. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <img src="images/other combo.jpg" alt="Combo NATO">
+    <h3>Combo (NATO Edition)</h3>
+    <span class="price">R370</span>
+    <p>Electric torch stun gun + NATO-certified pepper spray. It stuns. It blinds. It protects.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the NATO Combo. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <img src="images/couples.jpg" alt="His & Hers">
+    <h3>His & Hers Combo</h3>
+    <span class="price">R400</span>
+    <p>Matching defense kits for you and bae. Two stun guns + two pepper sprays. Safety in love.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the His & Hers Combo. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <img src="images/small spray.jpg" alt="Mini Spray">
+    <h3>Mini Pepper Spray (20ml)</h3>
+    <span class="price">R100</span>
+    <p>Tiny but powerful. Attach to your keys or bag and never be caught off guard.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the Mini Pepper Spray. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <img src="images/2stud.jpg" alt="Taser Flashlight">
+    <h3>Taser Flashlight</h3>
+    <span class="price">R200</span>
+    <p>It’s a torch. It’s a taser. It’s a silent warrior in your bag.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the Taser Flashlight. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <img src="images/nato pepper spray.jpg" alt="NATO Spray">
+    <h3>Pepper Spray (NATO)</h3>
+    <span class="price">R200</span>
+    <p>High-pressure formula. Stops tsotsis fast. NATO-grade for real threats.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the NATO Pepper Spray. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <img src="images/usa pepper.jpg" alt="USA Spray">
+    <h3>Pepper Spray (USA)</h3>
+    <span class="price">R170</span>
+    <p>Powerful, trusted, and direct. Just one spray = one attacker running.</p>
+    <a class="whatsapp" href="https://wa.me/27774061993?text=Hi! I'd like to order the USA Pepper Spray. My delivery area is ...">Order via WhatsApp</a>
+  </div>
+</div>
+
+<!-- Banking Details -->
+<section>
+  <h2 class="section-title">Banking Details (EFT Option)</h2>
+  <p>You can transfer directly to our bank account and WhatsApp proof to <strong>077 406 1993</strong>.</p>
+  <p><strong>Bank:</strong> Capitec</p>
+  <p><strong>Account Holder:</strong> MR CALEB ZONDO</p>
+  <p><strong>Account Type:</strong> Main Account</p>
+  <p><strong>Account Number / IBAN:</strong> 1684204443</p>
+  <p><strong>SWIFT/BIC:</strong> CABLZAJJ</p>
+  <p><strong>Branch Code:</strong> 470010</p>
+  <p><strong>Linked Cell No:</strong> 079 913 8027</p>
+</section>
+
+<!-- Delivery Info -->
+<section>
+  <h2 class="section-title">🚚 Delivery & Courier Info</h2>
+  <p>We deliver *nationwide* using <strong>PAXI</strong> (the Pep Stores courier service). This is a reliable, convenient option — available at most malls and towns across Mzansi.</p>
+
+  <p><strong>Courier Fee:</strong> R100 flat rate for deliveries across South Africa via PAXI.</p>
+  
+  <p><strong>Delivery Time:</strong> 4–7 working days from dispatch.</p>
+  
+  <p><strong>Free Local Delivery:</strong> If you're based in <strong>Mondlo</strong> or <strong>Vryheid</strong>, you qualify for <u>free same-day or next-day delivery</u>.</p>
+
+  <p><strong>Student Courier Network:</strong> We also have students who deliver directly on certain university campuses across South Africa. Ask if your school is covered.</p>
+
+  <p><strong>Custom Delivery:</strong> Want to use PostNet, Aramex, or a different service? No problem — we're flexible. Let us know and we’ll make a plan!</p>
+</section>
+
+
+<!-- Safety Disclaimer -->
+<section>
+  <h2 class="section-title">⚠️ Safety Disclaimer</h2>
+  <p>These are not toys. All items sold by GirlGuard are for **self-defense only**. Please use responsibly and **keep out of reach of children**. Misuse of these products may lead to legal consequences or serious harm.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 GirlGuard • Confidence in your hands.</p>
+</footer>
+
+<!-- Mobile Nav Script -->
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileNav").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

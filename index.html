@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GirlGuard | Be Your Own Bodyguard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111;
+      --primary: #ff3e6c; /* strong pinkish-red */
+      --accent: #ff9aa2;  /* soft blush pink */
+      --text: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    .logo h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 24px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #000;
+      padding: 1rem 2rem;
+    }
+
+    .mobile-nav a {
+      color: var(--accent);
+      padding: 0.5rem 0;
+      text-decoration: none;
+    }
+
+    .hero {
+      background: url('hero image.jpg') center center / cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.8rem;
+      color: #fff;
+      background-color: rgba(0,0,0,0.6);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--accent);
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .video-wrapper {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-top: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .contact {
+      text-align: center;
+      background-color: #000;
+      padding: 2rem;
+      border-top: 1px solid #222;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">
+    <img src="logo.jpg" alt="GirlGuard Logo">
+    <h1>GirlGuard</h1>
+  </div>
+
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="get-a-website.html">Get a Website</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="get-a-website.html">Get a Website</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Be your own bodyguard. Your safety starts now.</h1>
+</section>
+
+<!-- Why Choose -->
+<section>
+  <h2 class="section-title">Why Choose GirlGuard?</h2>
+  <p>Living in Mzansi ain’t easy. Whether you're a student walking home from campus, a lady getting off work late, or just vibing in the hood — safety is non-negotiable. At GirlGuard, we empower YOU to take control. We don’t just sell tools. We sell freedom. We sell protection.</p>
+  <a class="whatsapp" href="shop.html">Shop Now</a>
+</section>
+
+<!-- Delivery -->
+<section>
+  <h2 class="section-title">Delivery Info</h2>
+  <p><strong>Free delivery</strong> in Vryheid, Mondlo & surrounding areas.</p>
+  <p><strong>National options</strong> available via Paxi, PostNet and others (extra cost).</p>
+</section>
+
+<!-- How it Works -->
+<section>
+  <h2 class="section-title">How It Works</h2>
+  <div class="video-wrapper">
+    <div>
+      <iframe src="https://www.youtube.com/embed/R8bE4rGPQBY?si=3Lh-G5XUPqenbT9W" title="Stun Gun Demo"></iframe>
+      <p>Stun guns shock attackers instantly, giving you time to escape.</p>
+    </div>
+    <div>
+      <iframe src="https://www.youtube.com/embed/gJuOJfbVlLU?si=L8S1_Q6ztyvYZDKt" title="Pepper Spray Demo"></iframe>
+      <p>Pepper spray burns eyes and nose — perfect for stopping threats.</p>
+    </div>
+  </div>
+  <a class="whatsapp" href="shop.html">Visit the Shop</a>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <h2 class="section-title">Got Questions?</h2>
+  <p>WhatsApp us now: <a class="whatsapp" href="https://wa.me/27774061993">077 406 1993</a></p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 GirlGuard • Confidence in your hands.</p>
+</footer>
+
+<!-- Mobile Nav Script -->
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileNav").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
